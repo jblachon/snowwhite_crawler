@@ -28,8 +28,9 @@ public class SimpleCrawler extends WebCrawler {
      @Override
      public boolean shouldVisit(Page referringPage, WebURL url) {
          String href = url.getURL().toLowerCase();
-         return !FILTERS.matcher(href).matches()
-                && href.startsWith("http://www.ics.uci.edu/");
+         return !FILTERS.matcher(href).matches() ;
+         //TODO we can filter by set of website
+         // && href.startsWith("http://www.ics.uci.edu/");
      }
 
      /**

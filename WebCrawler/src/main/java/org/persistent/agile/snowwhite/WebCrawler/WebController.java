@@ -6,7 +6,7 @@ import edu.uci.ics.crawler4j.fetcher.PageFetcher;
 import edu.uci.ics.crawler4j.robotstxt.RobotstxtConfig;
 import edu.uci.ics.crawler4j.robotstxt.RobotstxtServer;
 
-	public class Controller {
+	public class WebController {
 	    public static void main(String[] args) throws Exception {
 	        String crawlStorageFolder = "c:\\tmp\\data\\crawl\\root";
 	        int numberOfCrawlers = 2;
@@ -43,7 +43,10 @@ import edu.uci.ics.crawler4j.robotstxt.RobotstxtServer;
 	         * which are found in these pages
 	         */
 	        //controller.addSeed("http://www.ics.uci.edu/~lopes/");
-	        controller.addSeed("http://www.ics.uci.edu/~welling/");
+	        //controller.addSeed("http://www.ics.uci.edu/~welling/");
+	        
+	        controller.addSeed("http://www.qualitystreet.fr/2008/08/27/kanban-board-encore-plus-lean-encore-plus-agile/");
+	        
 	        //controller.addSeed("http://www.ics.uci.edu/");
 
 	        /*
@@ -51,5 +54,6 @@ import edu.uci.ics.crawler4j.robotstxt.RobotstxtServer;
 	         * will reach the line after this only when crawling is finished.
 	         */
 	        controller.start(SimpleCrawler.class, numberOfCrawlers);
+	        	        
 	    }
 	}
