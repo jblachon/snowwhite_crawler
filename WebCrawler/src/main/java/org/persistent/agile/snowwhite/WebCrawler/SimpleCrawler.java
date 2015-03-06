@@ -3,6 +3,8 @@ package org.persistent.agile.snowwhite.WebCrawler;
 import java.util.Set;
 import java.util.regex.Pattern;
 
+import org.persistent.agile.snowwhite.storage.TextStorage;
+
 import edu.uci.ics.crawler4j.crawler.Page;
 import edu.uci.ics.crawler4j.crawler.WebCrawler;
 import edu.uci.ics.crawler4j.parser.HtmlParseData;
@@ -53,7 +55,11 @@ public class SimpleCrawler extends WebCrawler {
 
              System.out.println("Number of outgoing links: " + links.size());
              
-             
+             //Save file on disk for the moment in : 
+             //TextStorage.Store(htmlParseData.getTitle(), htmlParseData);
+             String filename = url.replace("http://","").replace('/','_').replace('~','_') ;
+             TextStorage.Store(filename, htmlParseData);
+                        
              System.out.println("Text length: " + text.length());
          } else {
         	 System.out.println("We do not have parseData for this url " + url ) ;
